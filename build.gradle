@@ -14,6 +14,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
 
 jar {
 	baseName = 'tredo-api'
@@ -29,5 +30,7 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
